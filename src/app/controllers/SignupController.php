@@ -18,9 +18,9 @@ class SignupController extends Controller{
         $name = $this->request->getPost("name");
         $email = $this->request->getPost('email');
 
-        print_r($myescaper->sanitize($name));
+        // print_r($myescaper->sanitize($name));
 
-        die;
+        // die;
 
         $data = array("name" =>  $myescaper->sanitize($name), "email" => $myescaper->sanitize($email));
 
