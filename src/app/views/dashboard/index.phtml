@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+
+
+    <?php 
+
+                //     if($this->session->has('name')){
+
+                //         if($this->session->has('rememberme')){
+                //             $name = $this->session->name;
+                //             $password = $this->session->password;
+                //             // $rememberme = $this->session->rememberme;
+
+                //             $credentials = array('name'=>$name ,'password'=> $password);
+
+                //             // $this->response->setCookies($this->cookies);
+
+                //             $this->cookies->set(
+                //                 'remember-me',
+                //                 json_encode($credentials),
+                //                 time() + 15 * 86400 ,
+                //             );
+                //             $this->cookies->send();
+                //         }
+                        
+                //         // echo '<pre>';
+                //             // print_r($this->cookies->getCookies());
+                //             // $cookie = $this->cookies->get();
+                //             //print_r($this->cookies->has('remember-me'));
+
+                //             //unset($this->cookies);        // tried using unset...
+
+                    
+                //         // $this->cookies->get('remember-me')->delete();
+                //             // $value = $this->cookies->get('remember-me')->getValue();
+                //             // print_r($value);
+                //             // $cred = json_decode($value);
+                //             // print_r($cred->name);
+                            
+                //         // echo '&nbsp;';
+                //         $name = $this->session->name;
+                //         echo '<h2>Hello '.$name.'!</h2>';
+
+    // ?>
+
+    <p>
+        
+        <!-- <b>Date : </b> <?php // $this->servertime; ?> -->
+    
+        <?php
+        echo '<h2>Hello there!</h2> You are logged in!';
+        // echo $this->tag->linkTo(
+        //         [
+        //             'index/logout',
+        //             'Logout',
+        //             'class' => 'logoutBtn',
+        //         ]
+        //     ); 
+
+            // } else {
+
+            //     $this->response->redirect('login');
+
+
+            //     /**
+            //      * Above is as per asked, redirected to the login page on directly accessing Dashboard page without login.
+            //      * 
+            //      * Lines below, are alternative to it. 
+            //      */
+
+            //     // echo '<h3>Please Login!</h3>';
+                
+
+            //     // echo $this->tag->linkTo(
+            //     //     'login',
+            //     //     'Login Here!'
+            //     // );
+            // }
+        ?>
+    </p>
+</body>
+</html>

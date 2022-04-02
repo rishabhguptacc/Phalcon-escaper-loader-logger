@@ -1,5 +1,16 @@
+<?php
+
+// use Phalcon\Logger;
+?>
+
 <div class="alert alert-<?php echo $success === true ? 'success' : 'danger'; ?>">
-    <?php echo $message; ?>
+    <?php
+        echo $message;
+        // $this->logger->error($message);
+        // $logger = $this->container->getShared('logger');
+        $this->logger->excludeAdapters(['login'])->info($message);
+
+    ?>
 </div>
 
 <?php echo $this->tag->linkTo(['/', 'Go back', 'class' => 'btn btn-primary']); ?>

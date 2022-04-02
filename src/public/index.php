@@ -12,6 +12,8 @@ use Phalcon\Db\Adapter\Pdo\Mysql;
 use Phalcon\Config;
 use Phalcon\Config\ConfigFactory;
 use Phalcon\Escaper;
+use Phalcon\Logger;
+use Phalcon\Logger\Adapter\Stream;
 
 
 $config = new Config([]);
@@ -72,7 +74,7 @@ $container->set(
                 'username' => $this['config']['db']['username'],
                 'password' => $this['config']['db']['password'],
                 'dbname'   => $this['config']['db']['dbname'],
-                ]
+            ]
         );
     }
 );
@@ -97,13 +99,31 @@ $container->set(
 );
 
 
+$container->set(
+    'logger',
+    function () {
+        $signup = new Stream('../app/logs/signup.log');
+        $login = new Stream('../app/logs/login.log');
+        $logger  = new Logger(
+            'messages',
+            [
+                'login' => $login,
+                'signup' => $signup,
+            ]
+        );
+
+        return $logger;
+    }
+);
+
+$logger = $container->getShared('logger');
 
 $container->set(
     'mongo',
     function () {
         $mongo = new MongoClient();
 
-        return $mongo->selectDB('phalt');
+        return $mongo->selectDB($this['config']['db']['dbname']);
     },
     true
 );

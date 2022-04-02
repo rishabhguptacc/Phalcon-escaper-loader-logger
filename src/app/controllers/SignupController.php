@@ -36,9 +36,11 @@ class SignupController extends Controller{
 
         $this->view->success = $success;
 
-        if($success){
+        // $this->logger->error($success);
+
+        if ($success) {
             $this->view->message = "Register succesfully";
-        }else{
+        } else {
             $this->view->message = "Not Register succesfully due to following reason: <br>".implode("<br>", $user->getMessages());
         }
     }

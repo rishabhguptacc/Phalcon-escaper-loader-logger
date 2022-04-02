@@ -9,6 +9,13 @@ echo $this->tag->linkTo(
     'Sign Up Here!'
 );
 
+echo '<br><br>';
+
+echo $this->tag->linkTo(
+    'login',
+    'Login Here!'
+);
+
 if ($users->count() > 0) {
     ?>
     <table class="table table-bordered table-hover">
